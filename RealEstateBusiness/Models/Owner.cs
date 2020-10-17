@@ -7,24 +7,18 @@ using System.Web;
 
 namespace RealEstateBusiness.Models
 {
-    [Table("Staff_tbl")]
-    public class Staff
+    [Table("Owner_tbl")]
+    public class Owner
     {
         [Key]
-        public String StaffNo { get; set; }
+        public String OwnerNo { get; set; }
 
         public String Fname { get; set; }
 
         public String Lname { get; set; }
 
-        public String Position { get; set; }
+        public String Address { get; set; }
 
-        public DateTime DOB { get; set; }
-
-        public int Salary { get; set; }
-
-        public Branch BranchNo { get; set; }
-
-        
+        public int TelNo { get; set; }
     }
 }

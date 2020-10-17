@@ -1,0 +1,40 @@
+﻿@model List<RealEstateBusiness.Models.Branch>
+@using RealEstateBusiness.Models
+
+@{
+    Layout = null;
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h2>Branches</h2>
+        <table border="1">
+            <tr>
+                <td>BranchNo</td>
+                <td>Street</td>
+                <td>City</td>
+                <td>PostCode</td>
+            </tr>
+
+
+            @foreach (Branch branch in Model)
+            {
+                <tr>
+                    <td>@branch.BranchNo</td>
+                    <td>@branch.Street</td>
+                    <td>@branch.City</td>
+                    <td>@branch.PostCode</td>
+                </tr>
+            }
+
+        </table>
+
+    </div>
+</body>
+</html>
+
+
