@@ -5,13 +5,16 @@
     Layout = null;
 }
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+
+<html>
 <head>
+    <meta name="viewport" content="width=device-width" />
     <title>Index</title>
 </head>
 <body>
-    <div>
-        <h2>Branches</h2>
+    <div> 
+        <h1>Branches</h1>
         <table border="1">
             <tr>
                 <td>BranchNo</td>
@@ -20,8 +23,7 @@
                 <td>PostCode</td>
             </tr>
 
-
-            @foreach (Branch branch in Model)
+            @foreach(Branch branch in Model)
             {
                 <tr>
                     <td>@branch.BranchNo</td>
@@ -30,11 +32,7 @@
                     <td>@branch.PostCode</td>
                 </tr>
             }
-
         </table>
-
     </div>
 </body>
 </html>
-
-

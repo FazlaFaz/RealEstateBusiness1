@@ -13,8 +13,8 @@ namespace RealEstateBusiness.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            List<Branch> branches = estateContext.Branches.ToList();
-            return View(branches);
+            List<Branch> Branches = estateContext.Branches.ToList();
+            return View(Branches);
         }
     }
 }
