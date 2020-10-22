@@ -10,6 +10,10 @@ namespace RealEstateBusiness.Models
     {
         public DbSet<Branch> Branches { get; set; }
 
+        public DbSet<Owner> Owners { get; set; }
 
+        public DbSet<Rent> Rents { get; set; }
+
+        public DbSet<Staff> Staffs { get; set; }
     }
 }

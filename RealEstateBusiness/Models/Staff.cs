@@ -19,11 +19,17 @@ namespace RealEstateBusiness.Models
 
         public String Position { get; set; }
 
+        [Column(TypeName = "Date")]
+        [DataType(DataType.Date)]
         public DateTime DOB { get; set; }
 
+        [DataType(DataType.Currency)]
         public int Salary { get; set; }
 
-        public Branch BranchNo { get; set; }
+        [ForeignKey("Branch")]
+        public String BranchNoRef { get; set; }
+
+        public Branch Branch { get; set; }
 
         
     }

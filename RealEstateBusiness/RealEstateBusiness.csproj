@@ -133,6 +133,26 @@
     <Compile Include="Migrations\202010171614257_branchV1.designer.cs">
       <DependentUpon>202010171614257_branchV1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010220601142_test5.cs" />
+    <Compile Include="Migrations\202010220601142_test5.Designer.cs">
+      <DependentUpon>202010220601142_test5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010220608424_testing.cs" />
+    <Compile Include="Migrations\202010220608424_testing.Designer.cs">
+      <DependentUpon>202010220608424_testing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010220729330_testing1.cs" />
+    <Compile Include="Migrations\202010220729330_testing1.Designer.cs">
+      <DependentUpon>202010220729330_testing1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010221657381_DateDatatype.cs" />
+    <Compile Include="Migrations\202010221657381_DateDatatype.Designer.cs">
+      <DependentUpon>202010221657381_DateDatatype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010221706370_Date.cs" />
+    <Compile Include="Migrations\202010221706370_Date.Designer.cs">
+      <DependentUpon>202010221706370_Date.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\EstateContext.cs" />
@@ -148,6 +168,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Index1.cshtml" />
+    <Content Include="Views\Home\Index2.cshtml" />
+    <Content Include="Views\Home\Index3.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -159,6 +182,21 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202010171614257_branchV1.resx">
       <DependentUpon>202010171614257_branchV1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010220601142_test5.resx">
+      <DependentUpon>202010220601142_test5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010220608424_testing.resx">
+      <DependentUpon>202010220608424_testing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010220729330_testing1.resx">
+      <DependentUpon>202010220729330_testing1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010221657381_DateDatatype.resx">
+      <DependentUpon>202010221657381_DateDatatype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010221706370_Date.resx">
+      <DependentUpon>202010221706370_Date.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

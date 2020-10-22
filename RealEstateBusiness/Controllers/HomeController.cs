@@ -16,5 +16,23 @@ namespace RealEstateBusiness.Controllers
             List<Branch> Branches = estateContext.Branches.ToList();
             return View(Branches);
         }
+
+        public ActionResult Index1()
+        {
+            List<Owner> Owners = estateContext.Owners.ToList();
+            return View(Owners);
+        }
+
+        public ActionResult Index2()
+        {
+            List<Rent> Rents = estateContext.Rents.ToList();
+            return View(Rents);
+        }
+
+        public ActionResult Index3()
+        {
+            List<Staff> Staffs = estateContext.Staffs.ToList();
+            return View(Staffs);
+        }
     }
 }

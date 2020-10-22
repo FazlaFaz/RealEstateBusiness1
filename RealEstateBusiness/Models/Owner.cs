@@ -17,8 +17,9 @@ namespace RealEstateBusiness.Models
 
         public String Lname { get; set; }
 
+        [DataType(DataType.MultilineText)]
         public String Address { get; set; }
 
-        public int TelNo { get; set; }
+        public String TelNo { get; set; }
     }
 }
