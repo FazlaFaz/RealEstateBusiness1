@@ -13,26 +13,43 @@ namespace RealEstateBusiness.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            List<Branch> Branches = estateContext.Branches.ToList();
-            return View(Branches);
+            List<Branch> AllBranches = estateContext.Branches.ToList();
+            return View(AllBranches);
         }
 
         public ActionResult Index1()
         {
-            List<Owner> Owners = estateContext.Owners.ToList();
-            return View(Owners);
+            List<Owner> AllOwners = estateContext.Owners.ToList();
+            return View(AllOwners);
         }
 
         public ActionResult Index2()
         {
-            List<Rent> Rents = estateContext.Rents.ToList();
-            return View(Rents);
+            List<Rent> AllRents = estateContext.Rents.ToList();
+            return View(AllRents);
         }
 
         public ActionResult Index3()
         {
-            List<Staff> Staffs = estateContext.Staffs.ToList();
-            return View(Staffs);
+            List<Staff> AllStaffs = estateContext.Staffs.ToList();
+            return View(AllStaffs);
+        }
+
+        public ActionResult StaffNames()
+        {
+            List<Staff> staffs = estateContext.Staffs.ToList();
+            return View(staffs);
+        }
+        public ActionResult StaffinBranch(string branchNo)
+        {
+            List<Staff> staffs = estateContext.Staffs.Where(x => x.BranchNoRef == branchNo).ToList();
+            return View(staffs);
+        }
+
+        public ActionResult StaffDetails(string id)
+        {
+            Staff staff = estateContext.Staffs.SingleOrDefault(x => x.BranchNoRef == id);
+            return View(staff);
         }
     }
 }

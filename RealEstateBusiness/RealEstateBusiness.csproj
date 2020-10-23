@@ -125,7 +125,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BranchController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OwnerController.cs" />
+    <Compile Include="Controllers\RentController.cs" />
+    <Compile Include="Controllers\StaffController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -153,6 +157,10 @@
     <Compile Include="Migrations\202010221706370_Date.Designer.cs">
       <DependentUpon>202010221706370_Date.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010230703113_Branch.cs" />
+    <Compile Include="Migrations\202010230703113_Branch.Designer.cs">
+      <DependentUpon>202010230703113_Branch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\EstateContext.cs" />
@@ -171,6 +179,8 @@
     <Content Include="Views\Home\Index1.cshtml" />
     <Content Include="Views\Home\Index2.cshtml" />
     <Content Include="Views\Home\Index3.cshtml" />
+    <Content Include="Views\Branch\Create.cshtml" />
+    <Content Include="Views\Branch\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -178,7 +188,11 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Owner\" />
+    <Folder Include="Views\Rent\" />
+    <Folder Include="Views\Staff\" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202010171614257_branchV1.resx">
       <DependentUpon>202010171614257_branchV1.cs</DependentUpon>
@@ -197,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010221706370_Date.resx">
       <DependentUpon>202010221706370_Date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010230703113_Branch.resx">
+      <DependentUpon>202010230703113_Branch.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
