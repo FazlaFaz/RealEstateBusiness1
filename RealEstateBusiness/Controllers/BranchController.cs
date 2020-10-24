@@ -19,12 +19,14 @@ namespace RealEstateBusiness.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.BranchDetails = estateContext.Branches;
             return View();
         }
 
         [HttpPost]
         public ActionResult Create(Branch branch)
         {
+            ViewBag.BranchDetails = estateContext.Branches;
             estateContext.Branches.Add(branch);
             estateContext.SaveChanges();
             return RedirectToAction("Index");

@@ -1,0 +1,25 @@
+﻿@model List<RealEstateBusiness.Models.Staff>
+@using RealEstateBusiness.Models
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>StaffinBranch</title>
+</head>
+<body>
+    <div> 
+        <h1>Staff Names</h1>
+        @foreach(Staff staff in Model)
+        {
+            @Html.ActionLink(staff.Fname, "StaffDetails", new { @id = staff.StaffNo });
+            <br>
+        }
+    </div>
+</body>
+</html>

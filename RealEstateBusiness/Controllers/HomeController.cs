@@ -35,6 +35,12 @@ namespace RealEstateBusiness.Controllers
             return View(AllStaffs);
         }
 
+        public ActionResult BranchNames()
+        {
+            List<Branch> branch = estateContext.Branches.ToList();
+            return View(branch);
+        }
+
         public ActionResult StaffNames()
         {
             List<Staff> staffs = estateContext.Staffs.ToList();
@@ -48,8 +54,20 @@ namespace RealEstateBusiness.Controllers
 
         public ActionResult StaffDetails(string id)
         {
-            Staff staff = estateContext.Staffs.SingleOrDefault(x => x.BranchNoRef == id);
+            Staff staff = estateContext.Staffs.SingleOrDefault(x => x.StaffNo == id);
             return View(staff);
+        }
+
+        public ActionResult OwnersProperty(string Id)
+        {
+            Owner owner = estateContext.Owners.SingleOrDefault(x => x.OwnerNo == Id);
+            return View(owner);
+        }
+
+        public ActionResult PropDetails(string Id)
+        {
+            List<Rent> rent = estateContext.Rents.Where(x => x.OwnerNoRef == Id).ToList();
+            return View(rent);
         }
     }
 }

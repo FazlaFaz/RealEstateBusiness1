@@ -10,15 +10,14 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>BranchNames</title>
 </head>
 <body>
     <div> 
-        <h1>Branches</h1>
-        @foreach (Branch branch in Model)
-
+        <h1>Branch No</h1>
+        @foreach(Branch branch in Model)
         {
-            @Html.ActionLink(branch.BranchNo, "StaffinBranch", "Home", new { @branchNo = branch.BranchNo }, null);
+            @Html.ActionLink(branch.BranchNo, "StaffinBranch", new { @branchNo = branch.BranchNo });
             <br>
         }
     </div>
