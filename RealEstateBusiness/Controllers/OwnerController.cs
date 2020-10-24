@@ -35,5 +35,46 @@ namespace RealEstateBusiness.Controllers
             estateContext.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult Detail(string id)
+        {
+            Owner owner = estateContext.Owners.SingleOrDefault(x => x.OwnerNo == id);
+            return View(owner);
+        }
+        public ActionResult Edit(string id)
+        {
+            Owner owner = estateContext.Owners.SingleOrDefault(x => x.OwnerNo == id);
+            ViewBag.OwnerDetails = new SelectList(estateContext.Owners, "OwnerNo", "OwnerNo");
+            return View(owner);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(string id, Owner updatedOwner)
+        {
+            Owner owner = estateContext.Owners.SingleOrDefault(x => x.OwnerNo == id);
+            owner.OwnerNo = updatedOwner.OwnerNo;
+            owner.Fname = updatedOwner.Fname;
+            owner.Lname = updatedOwner.Lname;
+            owner.Address = updatedOwner.Address;
+            owner.TelNo = updatedOwner.TelNo;
+            estateContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Delete(string id)
+        {
+            Owner owner = estateContext.Owners.SingleOrDefault(x => x.OwnerNo == id);
+            return View(owner);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeletedOwner(string id)
+        {
+            Owner owner = estateContext.Owners.SingleOrDefault(x => x.OwnerNo == id);
+            estateContext.Owners.Remove(owner);
+            estateContext.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
     }
 }

@@ -31,5 +31,30 @@ namespace RealEstateBusiness.Controllers
             estateContext.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult Details(string id)
+        {
+            Staff staff = estateContext.Staffs.SingleOrDefault(x => x.StaffNo == id);
+            return View(staff);
+        }
+
+        public ActionResult Edit(string id)
+        {
+            Staff staff = estateContext.Staffs.SingleOrDefault(x => x.StaffNo == id);
+            ViewBag.StaffDetails = new SelectList(estateContext.Staffs, "StaffNo", "StaffNo");
+            return View(staff);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(string id, Staff updatedStaff)
+        {
+            Staff staff = estateContext.Staffs.SingleOrDefault(x => x.StaffNo == id);
+            staff.StaffNo = updatedStaff.StaffNo;
+            staff.Fname = updatedStaff.Fname;
+            staff.Lname = updatedStaff.Lname;
+            staff.Position = updatedStaff.Position;
+            estateContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

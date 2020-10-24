@@ -17,6 +17,7 @@ namespace RealEstateBusiness.Controllers
             return View(AllBranches);
         }
 
+       
         public ActionResult Create()
         {
             ViewBag.BranchDetails = estateContext.Branches;
@@ -31,5 +32,46 @@ namespace RealEstateBusiness.Controllers
             estateContext.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult Details(string id)
+        {
+            Branch branch = estateContext.Branches.SingleOrDefault(x => x.BranchNo == id);
+            return View(branch);
+        }
+
+        public ActionResult Edit(string id)
+        {
+            Branch branch = estateContext.Branches.SingleOrDefault(x => x.BranchNo == id);
+            ViewBag.BranchDetails = new SelectList(estateContext.Branches,"BranchNo", "BranchNo");
+            return View(branch);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(string id,Branch updatedBranch)
+        {
+            Branch branch = estateContext.Branches.SingleOrDefault(x => x.BranchNo == id);
+            branch.BranchNo = updatedBranch.BranchNo;
+            branch.Street = updatedBranch.Street;
+            branch.City = updatedBranch.City;
+            branch.PostCode = updatedBranch.PostCode;
+            estateContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Delete(string id)
+        {
+            Branch branch = estateContext.Branches.SingleOrDefault(x => x.BranchNo == id);
+            return View(branch);
+        }
+
+        [HttpPost,ActionName("Delete")]
+        public ActionResult DeletedBranch(string id)
+        {
+            Branch branch = estateContext.Branches.SingleOrDefault(x => x.BranchNo == id);
+            estateContext.Branches.Remove(branch);
+            estateContext.SaveChanges();
+            return RedirectToAction("Index");
+         
+        }
+
     }
 }
