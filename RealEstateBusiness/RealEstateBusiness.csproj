@@ -201,6 +201,8 @@
     <Content Include="Views\Owner\Delete.cshtml" />
     <Content Include="Views\Rent\Delete.cshtml" />
     <Content Include="Views\Rent\Edit.cshtml" />
+    <Content Include="Views\Staff\Edit.cshtml" />
+    <Content Include="Views\Staff\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

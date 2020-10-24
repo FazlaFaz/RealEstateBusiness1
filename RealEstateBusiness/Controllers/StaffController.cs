@@ -24,10 +24,10 @@ namespace RealEstateBusiness.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Rent rent)
+        public ActionResult Create(Staff staff)
         {
             ViewBag.BranchDetails = estateContext.Branches;
-            estateContext.Rents.Add(rent);
+            estateContext.Staffs.Add(staff);
             estateContext.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -41,7 +41,7 @@ namespace RealEstateBusiness.Controllers
         public ActionResult Edit(string id)
         {
             Staff staff = estateContext.Staffs.SingleOrDefault(x => x.StaffNo == id);
-            ViewBag.StaffDetails = new SelectList(estateContext.Staffs, "StaffNo", "StaffNo");
+            ViewBag.BranchDetails = new SelectList(estateContext.Staffs, "BranchNoRef", "BranchNoRef");
             return View(staff);
         }
 
@@ -53,8 +53,27 @@ namespace RealEstateBusiness.Controllers
             staff.Fname = updatedStaff.Fname;
             staff.Lname = updatedStaff.Lname;
             staff.Position = updatedStaff.Position;
+            staff.DOB = updatedStaff.DOB;
+            staff.Salary = updatedStaff.Salary;
+            staff.BranchNoRef = updatedStaff.BranchNoRef;
             estateContext.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Delete(string id)
+        {
+            Staff staff = estateContext.Staffs.SingleOrDefault(x => x.StaffNo == id);
+            return View(staff);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeletedStaff(string id)
+        {
+            Staff staff = estateContext.Staffs.SingleOrDefault(x => x.StaffNo == id);
+            estateContext.Staffs.Remove(staff);
+            estateContext.SaveChanges();
+            return RedirectToAction("Index");
+
         }
     }
 }
