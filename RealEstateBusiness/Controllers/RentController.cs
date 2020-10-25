@@ -32,9 +32,14 @@ namespace RealEstateBusiness.Controllers
             ViewBag.OwnerDetails = estateContext.Owners;
             ViewBag.StaffDetails = estateContext.Staffs;
             ViewBag.BranchDetails = estateContext.Branches;
-            estateContext.Rents.Add(rent);
-            estateContext.SaveChanges();
-            return RedirectToAction("Index");
+            if(ModelState.IsValid)
+            {
+                estateContext.Rents.Add(rent);
+                estateContext.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
+            
         }
 
         public ActionResult Details(string id)

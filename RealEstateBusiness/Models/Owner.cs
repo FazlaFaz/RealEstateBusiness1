@@ -13,15 +13,16 @@ namespace RealEstateBusiness.Models
         [Key]
         public String OwnerNo { get; set; }
 
-       
+        [Display(Name ="First Name")]
         public String Fname { get; set; }
 
-      
+        [Display(Name = "Last Name")]
         public String Lname { get; set; }
 
         [DataType(DataType.MultilineText)]
         public String Address { get; set; }
 
+        [Display(Name = "Tel.Number")]
         public String TelNo { get; set; }
     }
 }

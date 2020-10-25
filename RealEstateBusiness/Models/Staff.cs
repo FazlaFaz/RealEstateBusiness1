@@ -13,16 +13,17 @@ namespace RealEstateBusiness.Models
         [Key]
         public String StaffNo { get; set; }
 
-      
+        [Display(Name = "First Name")]
         public String Fname { get; set; }
 
-       
+        [Display(Name = "Last Name")]
         public String Lname { get; set; }
 
         public String Position { get; set; }
 
         [Column(TypeName = "Date")]
         [DataType(DataType.Date)]
+
         public DateTime DOB { get; set; }
 
         [DataType(DataType.Currency)]

@@ -1,0 +1,48 @@
+﻿@model List<RealEstateBusiness.Models.Rent>
+@using RealEstateBusiness.Models
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index2</title>
+</head>
+<body>
+    <div> 
+        <h1>Rent Details</h1>
+        <table border="1">
+            <tr>
+                <td>Property Number</td>
+                <td>Street</td>
+                <td>City</td>
+                <td>Property Type</td>
+                <td>Rooms</td>
+                <td>Owner NoRef</td>
+                <td>Staff NoRef</td>
+                <td>Branch NoRef</td>
+                <td>Rent</td>
+            </tr>
+
+            @foreach (Rent rent in Model)
+            {
+                <tr>
+                    <td>@rent.PropertyNo</td>
+                    <td>@rent.Street</td>
+                    <td>@rent.City</td>
+                    <td>@rent.Ptype</td>
+                    <td>@rent.Rooms</td>
+                    <td>@rent.OwnerNoRef</td>
+                    <td>@rent.StaffNoRef</td>
+                    <td>@rent.BranchNoRef</td>
+                    <td>@rent.rent1</td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿@model List<RealEstateBusiness.Models.Staff>
+@using RealEstateBusiness.Models
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index3</title>
+</head>
+<body>
+    <div> 
+        <h1>Staff Details</h1>
+        <table border="1">
+            <tr>
+                <td>Staff Number</td>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Position</td>
+                <td>DOB</td>
+                <td>Salary</td>
+                <td>Branch NoRef</td>
+            </tr>
+
+            @foreach (Staff staff in Model)
+            {
+                <tr>
+                    <td>@staff.StaffNo</td>
+                    <td>@staff.Fname</td>
+                    <td>@staff.Lname</td>
+                    <td>@staff.Position</td>
+                    <td>@staff.DOB</td>
+                    <td>@staff.Salary</td>
+                    <td>@staff.BranchNoRef</td>
+                  
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

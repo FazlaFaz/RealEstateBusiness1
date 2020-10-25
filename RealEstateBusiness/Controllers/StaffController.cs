@@ -28,9 +28,13 @@ namespace RealEstateBusiness.Controllers
         public ActionResult Create(Staff staff)
         {
             ViewBag.BranchDetails = estateContext.Branches;
-            estateContext.Staffs.Add(staff);
-            estateContext.SaveChanges();
-            return RedirectToAction("Index");
+            if(ModelState.IsValid)
+            {
+                estateContext.Staffs.Add(staff);
+                estateContext.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
         }
 
         public ActionResult Details(string id)

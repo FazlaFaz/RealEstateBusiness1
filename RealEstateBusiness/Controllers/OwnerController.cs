@@ -31,9 +31,14 @@ namespace RealEstateBusiness.Controllers
         [HttpPost]
         public ActionResult Create(Owner owner)
         {
-            estateContext.Owners.Add(owner);
-            estateContext.SaveChanges();
-            return RedirectToAction("Index");
+           if(ModelState.IsValid)
+            {
+                estateContext.Owners.Add(owner);
+                estateContext.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
+           
         }
 
         public ActionResult Detail(string id)
