@@ -13,8 +13,10 @@ namespace RealEstateBusiness.Models
         [Key]
         public String StaffNo { get; set; }
 
+      
         public String Fname { get; set; }
 
+       
         public String Lname { get; set; }
 
         public String Position { get; set; }
@@ -31,6 +33,6 @@ namespace RealEstateBusiness.Models
 
         public Branch Branch { get; set; }
 
-        
+
     }
 }

@@ -84,5 +84,19 @@ namespace RealEstateBusiness.Controllers
             return RedirectToAction("Index");
 
         }
+
+        public ActionResult PropertyCity()
+        {
+            List<Rent> rent = estateContext.Rents.ToList();
+            return View(rent);
+           
+        }
+
+        public ActionResult Counts(string branch)
+        {
+            List<Rent> rent = estateContext.Rents.ToList();
+            return View(rent);
+
+        }
     }
 }

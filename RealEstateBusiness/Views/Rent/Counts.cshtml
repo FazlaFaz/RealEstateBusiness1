@@ -1,0 +1,25 @@
+﻿@model List<RealEstateBusiness.Models.Rent>
+@using RealEstateBusiness.Models
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Counts</title>
+</head>
+<body>
+    <div> 
+        <h1>Branch Number</h1>
+        @foreach (Rent rent in Model)
+        {
+            @Html.ActionLink(rent.BranchNoRef, "Property", "Home", new { @id = rent.BranchNoRef }, null);
+            <br>
+        }
+    </div>
+</body>
+</html>

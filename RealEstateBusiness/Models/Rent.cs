@@ -17,6 +17,7 @@ namespace RealEstateBusiness.Models
 
         public String City { get; set; }
 
+     
         public String Ptype { get; set; }
 
         public int Rooms { get; set; }
@@ -30,6 +31,7 @@ namespace RealEstateBusiness.Models
         [ForeignKey("Branch")]
         public String BranchNoRef { get; set; }
 
+       
         public int rent1 { get; set; }
 
         public Owner Owner { get; set; }
@@ -37,6 +39,6 @@ namespace RealEstateBusiness.Models
         public Staff Staff { get; set; }
 
         public Branch Branch { get; set; }
-        
+
     }
 }

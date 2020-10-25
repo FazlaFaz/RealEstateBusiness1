@@ -13,8 +13,10 @@ namespace RealEstateBusiness.Models
         [Key]
         public String OwnerNo { get; set; }
 
+       
         public String Fname { get; set; }
 
+      
         public String Lname { get; set; }
 
         [DataType(DataType.MultilineText)]

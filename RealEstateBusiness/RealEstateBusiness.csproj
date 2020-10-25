@@ -121,7 +121,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -133,33 +135,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202010171614257_branchV1.cs" />
-    <Compile Include="Migrations\202010171614257_branchV1.designer.cs">
-      <DependentUpon>202010171614257_branchV1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010220601142_test5.cs" />
-    <Compile Include="Migrations\202010220601142_test5.Designer.cs">
-      <DependentUpon>202010220601142_test5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010220608424_testing.cs" />
-    <Compile Include="Migrations\202010220608424_testing.Designer.cs">
-      <DependentUpon>202010220608424_testing.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010220729330_testing1.cs" />
-    <Compile Include="Migrations\202010220729330_testing1.Designer.cs">
-      <DependentUpon>202010220729330_testing1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010221657381_DateDatatype.cs" />
-    <Compile Include="Migrations\202010221657381_DateDatatype.Designer.cs">
-      <DependentUpon>202010221657381_DateDatatype.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010221706370_Date.cs" />
-    <Compile Include="Migrations\202010221706370_Date.Designer.cs">
-      <DependentUpon>202010221706370_Date.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010230703113_Branch.cs" />
-    <Compile Include="Migrations\202010230703113_Branch.Designer.cs">
-      <DependentUpon>202010230703113_Branch.cs</DependentUpon>
+    <Compile Include="Migrations\202010250829110_asq.cs" />
+    <Compile Include="Migrations\202010250829110_asq.Designer.cs">
+      <DependentUpon>202010250829110_asq.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Branch.cs" />
@@ -175,34 +153,32 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Index1.cshtml" />
-    <Content Include="Views\Home\Index2.cshtml" />
-    <Content Include="Views\Home\Index3.cshtml" />
+    <Content Include="Views\Branch\Index.cshtml" />
     <Content Include="Views\Branch\Create.cshtml" />
-    <Content Include="Views\Home\StaffNames.cshtml" />
-    <Content Include="Views\Home\StaffinBranch.cshtml" />
-    <Content Include="Views\Home\StaffDetails.cshtml" />
-    <Content Include="Views\Home\BranchNames.cshtml" />
-    <Content Include="Views\Owner\Create.cshtml" />
+    <Content Include="Views\Branch\Details.cshtml" />
+    <Content Include="Views\Branch\Edit.cshtml" />
+    <Content Include="Views\Branch\Delete.cshtml" />
     <Content Include="Views\Owner\Index.cshtml" />
-    <Content Include="Views\Rent\Index.cshtml" />
-    <Content Include="Views\Rent\Create.cshtml" />
+    <Content Include="Views\Owner\Create.cshtml" />
+    <Content Include="Views\Owner\Detail.cshtml" />
+    <Content Include="Views\Owner\Edit.cshtml" />
+    <Content Include="Views\Owner\Delete.cshtml" />
     <Content Include="Views\Staff\Index.cshtml" />
     <Content Include="Views\Staff\Create.cshtml" />
-    <Content Include="Views\Branch\Edit.cshtml" />
-    <Content Include="Views\Branch\Index.cshtml" />
-    <Content Include="Views\Owner\Edit.cshtml" />
-    <Content Include="Views\Owner\Detail.cshtml" />
-    <Content Include="Views\Branch\Details.cshtml" />
-    <Content Include="Views\Rent\Details.cshtml" />
     <Content Include="Views\Staff\Details.cshtml" />
-    <Content Include="Views\Branch\Delete.cshtml" />
-    <Content Include="Views\Owner\Delete.cshtml" />
-    <Content Include="Views\Rent\Delete.cshtml" />
-    <Content Include="Views\Rent\Edit.cshtml" />
     <Content Include="Views\Staff\Edit.cshtml" />
     <Content Include="Views\Staff\Delete.cshtml" />
+    <Content Include="Views\Rent\Index.cshtml" />
+    <Content Include="Views\Rent\Create.cshtml" />
+    <Content Include="Views\Rent\Details.cshtml" />
+    <Content Include="Views\Rent\Edit.cshtml" />
+    <Content Include="Views\Rent\Delete.cshtml" />
+    <Content Include="Views\Staff\Index1.cshtml" />
+    <Content Include="Views\Rent\PropertyCity.cshtml" />
+    <Content Include="Views\Rent\Counts.cshtml" />
+    <Content Include="Views\Home\PropertyNo.cshtml" />
+    <Content Include="Views\Home\Property.cshtml" />
+    <Content Include="Views\Home\StaffPosition.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -212,26 +188,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202010171614257_branchV1.resx">
-      <DependentUpon>202010171614257_branchV1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010220601142_test5.resx">
-      <DependentUpon>202010220601142_test5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010220608424_testing.resx">
-      <DependentUpon>202010220608424_testing.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010220729330_testing1.resx">
-      <DependentUpon>202010220729330_testing1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010221657381_DateDatatype.resx">
-      <DependentUpon>202010221657381_DateDatatype.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010221706370_Date.resx">
-      <DependentUpon>202010221706370_Date.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010230703113_Branch.resx">
-      <DependentUpon>202010230703113_Branch.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202010250829110_asq.resx">
+      <DependentUpon>202010250829110_asq.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

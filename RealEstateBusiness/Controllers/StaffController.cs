@@ -9,6 +9,7 @@ namespace RealEstateBusiness.Controllers
 {
     public class StaffController : Controller
     {
+
         private EstateContext estateContext = new EstateContext();
         // GET: Rent
         public ActionResult Index()
@@ -73,6 +74,13 @@ namespace RealEstateBusiness.Controllers
             estateContext.Staffs.Remove(staff);
             estateContext.SaveChanges();
             return RedirectToAction("Index");
+
+        }
+
+        public ActionResult Index1()
+        {
+            List<Staff> staff = estateContext.Staffs.ToList();
+            return View(staff);
 
         }
     }
